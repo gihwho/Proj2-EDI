@@ -1,0 +1,8 @@
+10 mov a 5
+20 mov b 2
+30 inc a
+40 dec b
+50 jnz b 30
+60 mov x a
+70 sub x 2
+80 out x

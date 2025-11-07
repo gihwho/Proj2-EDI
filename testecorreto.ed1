@@ -1,0 +1,24 @@
+10 mov a 5
+20 mov b 3
+30 mov c a
+40 add a b
+50 sub a 1
+60 mul b a
+70 div b 3
+80 inc a
+90 dec b
+100 mov d 10
+110 add d a
+120 sub d b
+130 out a
+140 out b
+150 out d
+160 mov j 200
+170 mov e 1
+180 dec e
+190 jnz e j
+200 mov f d
+210 out f
+220 mov g 2
+230 mul g f
+240 out g

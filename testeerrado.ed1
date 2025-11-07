@@ -1,0 +1,17 @@
+10 inc x
+20 mov y z
+30 mov 10 a
+40 add a b c
+50 sub a
+60 mul
+70 mov a 5
+80 div a 0
+90 mov b 4
+100 add b w
+110 jnz a 999
+120 jnz k 70
+130 jnz a label
+140 out c
+150 out 10
+160 mov 2 x
+170 mov h q
