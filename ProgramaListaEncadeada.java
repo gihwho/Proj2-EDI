@@ -22,8 +22,6 @@ class ProgramaListaEncadeada extends ListaEncadeada<Linha> {
     }
 
     //insere mantendo a lista ordenada por numeroLinha.
-    //se a linha ja existir, atualiza a instrucao.
-    //retorna 'I' (inseriu) ou 'U' (atualizou).
     public char inserirOuAtualizar(int n, String instr) {
         if (n < 0) {
             throw new IllegalArgumentException("Erro: linha " + n + " inválida.");
@@ -51,7 +49,7 @@ class ProgramaListaEncadeada extends ListaEncadeada<Linha> {
             p = p.prox;
         }
 
-        //achou linha com mesmo numero -> atualiza instrucao
+        //achou linha com mesmo numero - atualiza instrucao
         if (p != null && p.info.numeroLinha == n) {
             p.info.instrucao = instr;
             return 'U';
@@ -65,7 +63,7 @@ class ProgramaListaEncadeada extends ListaEncadeada<Linha> {
         return 'I';
     }
 
-    //remove uma unica linha; retorna a Linha removida ou null se nao existir.
+    //remove uma unica linha - retorna a Linha removida ou null se nao existir.
     public Linha removerLinha(int n) {
         if (inicio == null) return null;
 
@@ -92,7 +90,7 @@ class ProgramaListaEncadeada extends ListaEncadeada<Linha> {
         return p.info;
     }
 
-    //remove intervalo [li, lf] e retorna uma NOVA lista contendo os removidos
+    //remove intervalo [li, lf] e retorna uma nova lista contendo os removidos
     public ProgramaListaEncadeada removerIntervalo(int li, int lf) {
         if (li > lf) {
             throw new IllegalArgumentException("Erro: intervalo inválido de linhas.");
