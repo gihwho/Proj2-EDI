@@ -116,7 +116,7 @@ public class Main {
     }
 
     private static void cmdINS(String linha) {
-        // INS <LINHA> <INSTRUÇÃO>
+        //INS <LINHA> <INSTRUÇÃO>
         String resto = linha.substring(4).trim();
         int esp = resto.indexOf(' ');
         if (esp < 0) {
@@ -134,7 +134,7 @@ public class Main {
 
         int n = Integer.parseInt(sNum);
 
-        // Pega o CONTEÚDO ANTERIOR (string) ANTES de atualizar
+        //pega o conteudo anterior antes de atualizar
         Linha antiga = codigo.buscar(n);
         String instrAntiga = (antiga != null ? antiga.instrucao : null);
 
@@ -144,14 +144,14 @@ public class Main {
         if (r == 'I' || instrAntiga == null) {
             System.out.println("Linha inserida:\n" + n + " " + instr);
         } else {
-            // Agora usa a string salva ANTES da atualizacao
+            //usa a string salva antes da atualizacao
             System.out.println("Linha:\n" + n + " " + instrAntiga +
                                "\nAtualizada para:\n" + n + " " + instr);
         }
     }
 
     private static void cmdDEL(String linha) {
-        // DEL <LINHA>  OU  DEL <LI> <LF>
+        //DEL <LINHA>  OU  DEL <LI> <LF>
         String resto = linha.substring(4).trim();
         String[] t = resto.split("\\s+");
 
@@ -191,7 +191,7 @@ public class Main {
             }
 
         } else {
-            System.out.println("Erro: uso: DEL <LINHA>  ou  DEL <LI> <LF>");
+            System.out.println("Erro: uso: DEL <LINHA> ou DEL <LI> <LF>");
         }
     }
 
@@ -274,12 +274,10 @@ public class Main {
                     w.write(num + " " + inst);
                     w.newLine();
                 } catch (IOException ex) {
-                    // erro tratado no catch externo
                 }
             });
             w.flush();
             return true;
-
         } catch (IOException e) {
             return false;
         }

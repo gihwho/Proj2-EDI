@@ -31,7 +31,7 @@ class Interpretador {
         return true;
     }
 
-    //le um valor que pode ser inteiro OU registrador (ja definido)
+    //le um valor que pode ser inteiro ou registrador
     private int lerValor(String token) throws Exception {
         if (ehRegistrador(token)) {
             int k = idxReg(token.charAt(0));
@@ -48,7 +48,7 @@ class Interpretador {
         }
     }
 
-    //garante que o registrador existe e ja foi definido (usado em leituras)
+    //garante que o registrador existe e ja foi definido
     private void exigirRegistradorDefinidoParaLeitura(String x, String linhaBruta) throws Exception {
         if (!ehRegistrador(x)) {
             throw new Exception("Erro: operando inválido.");
@@ -71,14 +71,13 @@ class Interpretador {
         definido[k] = true;
     }
 
-    // ATENÇÃO: troque o tipo do parametro se sua classe for ProgramaLista em vez de ProgramaListaEncadeada
     public void executar(ProgramaListaEncadeada codigo) {
         if (codigo == null || codigo.vazia()) {
             System.out.println("Erro: não há código carregado na memória.");
             return;
         }
 
-        // Copia a lista encadeada para vetores (numero da linha + instrucao)
+        //copia a lista encadeada para vetores (numero da linha + instru)
         int n = codigo.tamanho();
         int[] linhas = new int[n];
         String[] insts = new String[n];
@@ -90,7 +89,7 @@ class Interpretador {
             idx[0]++;
         });
 
-        int pc = 0; // program counter = indice no vetor
+        int pc = 0;
 
         while (pc >= 0 && pc < n) {
             String instrucao = insts[pc];
@@ -185,13 +184,13 @@ class Interpretador {
                         if (t.length != 3) {
                             throw new Exception("Erro: JNZ requer 2 argumentos.");
                         }
-                        // x precisa ser registrador valido e definido
+                        //x precisa ser registrador valido e definido
                         exigirRegistradorDefinidoParaLeitura(t[1], linhaBruta);
 
-                        // y pode ser inteiro OU registrador contendo o numero da linha
+                        //y pode ser inteiro ou registrador contendo o numero da linha
                         int alvo = lerValor(t[2]);
 
-                        // verifica se existe linha com esse numero
+                        //verifica se existe linha com esse numero
                         int novoPc = -1;
                         for (int i = 0; i < n; i++) {
                             if (linhas[i] == alvo) {

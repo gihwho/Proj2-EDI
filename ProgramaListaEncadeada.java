@@ -69,7 +69,7 @@ class ProgramaListaEncadeada extends ListaEncadeada<Linha> {
     public Linha removerLinha(int n) {
         if (inicio == null) return null;
 
-        // remove no inicio
+        //remove no inicio
         if (inicio.info.numeroLinha == n) {
             Linha r = inicio.info;
             inicio = inicio.prox;
@@ -85,7 +85,7 @@ class ProgramaListaEncadeada extends ListaEncadeada<Linha> {
             p = p.prox;
         }
 
-        if (p == null) return null; // nao achou
+        if (p == null) return null; //nao achou
 
         ant.prox = p.prox;
         tamanho--;
