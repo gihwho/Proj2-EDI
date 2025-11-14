@@ -13,7 +13,6 @@ public class ListaEncadeada<T> {
     public boolean vazia() { return inicio == null; }
     public int tamanho() { return tamanho; }
 
-
     public void inserirInicio(T valor) {
         No<T> novo = new No<>(valor);
 
@@ -21,7 +20,6 @@ public class ListaEncadeada<T> {
         inicio = novo;
         tamanho++;
     }
-
 
     public void inserirFim(T valor) {
         No<T> novo = new No<>(valor);
@@ -37,7 +35,6 @@ public class ListaEncadeada<T> {
         tamanho++;
     }
 
-
     public T removerInicio() {
         if (inicio == null) return null;
 
@@ -49,9 +46,7 @@ public class ListaEncadeada<T> {
         return removido.info;
     }
 
-
     public interface Visitante<T> { void visitar(T valor); }
-
 
     public void percorrer(Visitante<T> v) {
         No<T> p = inicio;
